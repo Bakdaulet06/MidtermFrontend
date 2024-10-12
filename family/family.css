@@ -23,7 +23,6 @@
 .header{
     padding: 30px 0px;
     background-color: var(--black);
-
 }
 .header_wrapper{
     display: flex;
@@ -54,63 +53,6 @@ li a{
 .header_list{
     display: flex;
     justify-content: flex-end;
-}
-
-.hobbies{
-    background-color: var(--lightBlue);
-    padding: 30px 0px;
-}
-.hobbies_wrapper{
-    display: flex;
-    justify-content: space-between;
-}
-.hobby{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 200px;
-}
-.hobby_text_container{
-    position: absolute;
-    top: 220px;
-    max-width: 330px;
-}
-.hobby img{
-    width: 350px;
-    height: 280px;
-}
-.date{
-    background-color: var(--yellow);
-    width: fit-content;
-    padding: 10px;
-}
-.date p{
-    color: var(--darkBlue);
-}
-.hobby_text{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: var(--darkBlue);
-    padding: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-.hobby_label{
-    border: solid gray 1px;
-    width: fit-content;
-    padding: 5px 10px;
-}
-.read_more{
-    padding: 5px 0px;
-    border-bottom: var(--yellow) solid 2px;
-    width: fit-content;
-    color: var(--yellow);
-}
-.read_more:hover{
-    cursor: pointer;
-    border-bottom: solid var(--lightBlue) 2px;
-    color: var(--lightBlue);
 }
 
 .intro{
@@ -146,6 +88,50 @@ h5{
     background-color: var(--white);
 }
 
+.family{
+    background-color: var(--lightBlue);
+    padding: 30px;
+}
+.family_members{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 25px;
+}
+.member{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background-color: var(--darkBlue);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.member_image img{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border-radius: 50% 0 50% 50%;
+}
+.member_text{
+    display: flex;
+    flex-direction: column;
+    max-width: 360px;
+    width: 100%;
+    gap: 10px;
+}
+.member_name{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.member_name p{
+    color: var(--yellow);
+}
+.member_name h5{
+    color: var(--gold);
+}
+
 .burger_menu{
     display: none;
 }
@@ -153,20 +139,17 @@ h5{
     display: none;
 }
 
-@media  screen and (max-width:1150px) {
+@media screen and (max-width: 1150px){
     .header_wrapper{
         padding: 0px 20px;
     }
-}
-
-@media screen and (max-width: 1090px){
     .intro{
         align-items: center;
     }
-    .hobbies_wrapper{
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
+    .member{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 }
 
@@ -175,6 +158,17 @@ h5{
         flex-direction: column;
         align-items: center;
         gap: 10px;
+    }
+    .family_members{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .member{
+        max-width: 590px;
+        width: 100%;
+        flex-direction: row;
+        text-align: left;
     }
 }
 
@@ -192,6 +186,10 @@ h5{
     }
     .v_line{
         margin: 0px;
+    }
+    .member{
+        flex-direction: column;
+        text-align: center;
     }
 
     .burger_menu{

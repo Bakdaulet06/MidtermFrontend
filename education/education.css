@@ -55,6 +55,40 @@ li a{
     justify-content: flex-end;
 }
 
+.education{
+    padding: 30px 0px;
+    background-color: #003566;
+    height: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background-color: var(--lightBlue);
+}
+.education_achievements{
+    display: flex;
+    gap: 30px;
+}
+.achievement{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: solid var(--yellow) 1px;
+    gap: 10px;
+    background-color: var(--darkBlue);
+}
+.achievement_text{
+    display: flex;
+    flex-direction: column;
+}
+.achievement_icon{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.achievement_icon svg{
+    width: 60px;
+    height: 60px;
+}
+
 .intro{
     margin-bottom: 30px;
     display: flex;
@@ -66,18 +100,19 @@ h1{
     font-size: 80px;
 }
 h2{
-   font-size: 70px; 
-   color: var(--yellow);
+   font-size: 70px;
+   color: var(--yellow); 
 }
 h3{
     font-size: 50px;
 }
 h4{
     font-size: 20px;
-    color: var(--yellow);
+    color: var(--white);
 }
 h5{
     font-size: 15px;
+    color: var(--yellow);
 }
 .text{
     font-size: 18px;
@@ -88,50 +123,6 @@ h5{
     background-color: var(--white);
 }
 
-.family{
-    background-color: var(--lightBlue);
-    padding: 30px;
-}
-.family_members{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 25px;
-}
-.member{
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    background-color: var(--darkBlue);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-.member_image{
-    width: 100px;
-    height: 100px;
-    background-color: black;
-    border-radius: 50% 0 50% 50%;
-}
-.member_text{
-    display: flex;
-    flex-direction: column;
-    max-width: 360px;
-    width: 100%;
-    gap: 10px;
-}
-.member_name{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-.member_name p{
-    color: var(--yellow);
-}
-.member_name h5{
-    color: var(--gold);
-}
-
 .burger_menu{
     display: none;
 }
@@ -139,17 +130,24 @@ h5{
     display: none;
 }
 
-@media screen and (max-width: 1150px){
+@media  screen and (max-width:1150px) {
     .header_wrapper{
         padding: 0px 20px;
     }
+}
+
+@media screen and (max-width: 1070px) {
     .intro{
         align-items: center;
     }
-    .member{
-        flex-direction: column;
+    .education_achievements{
+        flex-wrap: wrap;
         align-items: center;
-        text-align: center;
+        justify-content: center;
+    }
+    .achievement{
+        max-width: 480px;
+        width: 100%;
     }
 }
 
@@ -158,17 +156,6 @@ h5{
         flex-direction: column;
         align-items: center;
         gap: 10px;
-    }
-    .family_members{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .member{
-        max-width: 590px;
-        width: 100%;
-        flex-direction: row;
-        text-align: left;
     }
 }
 
@@ -186,10 +173,6 @@ h5{
     }
     .v_line{
         margin: 0px;
-    }
-    .member{
-        flex-direction: column;
-        text-align: center;
     }
 
     .burger_menu{

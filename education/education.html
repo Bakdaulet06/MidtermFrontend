@@ -13,11 +13,11 @@
 <body>
     <div class="off_screen_menu">
         <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="family.html">Family</a></li>
-            <li><a href="education.html">Education</a></li>
-            <li><a href="hobbies.html">Hobbies</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/midterm-project/home/home.html">Home</a></li>
+            <li><a href="/midterm-project/family/family.html">Family</a></li>
+            <li><a href="/midterm-project/education/education.html">Education</a></li>
+            <li><a href="/midterm-project/hobbies/hobbies.html">Hobbies</a></li>
+            <li><a href="/midterm-project/contact/contact.html">Contact</a></li>
         </ul>
     </div>
 
@@ -29,11 +29,11 @@
                 </div>
                 <nav class="header_list">
                     <ul>
-                        <li><a href="home.html" id="home_link">Home</a></li>
-                        <li><a href="family.html" id="family_link">Family</a></li>
-                        <li><a href="education.html" id="education_link">Education</a></li>
-                        <li><a href="hobbies.html" id="hobbies_link">Hobbies</a></li>
-                        <li><a href="contact.html" id="contact_link">Contact</a></li>
+                        <li><a href="/midterm-project/home/home.html" id="home_link">Home</a></li>
+                        <li><a href="/midterm-project/family/family.html" id="family_link">Family</a></li>
+                        <li><a href="/midterm-project/education/education.html" id="education_link">Education</a></li>
+                        <li><a href="/midterm-project/hobbies/hobbies.html" id="hobbies_link">Hobbies</a></li>
+                        <li><a href="/midterm-project/contact/contact.html" id="contact_link">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="burger_menu">
@@ -112,39 +112,37 @@
             offScreenMenu.classList.toggle('active');
         })
 
-        const selectedItems = document.querySelectorAll(".header_list ul li a");
+        const headerMenuItems = document.querySelectorAll(".header_list ul li a");
         function getCurrentPage() {
             const path = window.location.pathname;
-            const page = path.split("/").pop();
-            return page;
+            return path;
         }
-        function highlightCurrentPage() {
-        const currentPage = getCurrentPage();
-        selectedItems.forEach((element) => {
-            if (element.getAttribute("href") === currentPage) {
-                element.classList.add('selected');
+        function highlightHeaderMenu() {
+            const currentPage = getCurrentPage();
+            headerMenuItems.forEach((element) => {
+                if (element.getAttribute("href") === currentPage) {
+                    element.classList.add('selected');
                 } else {
-                element.classList.remove('selected');
+                    element.classList.remove('selected');
                 }
             });
         }
-        selectedItems.forEach((element) => {
+        headerMenuItems.forEach((element) => {
             element.addEventListener('click', () => {
-                selectedItems.forEach((el) => el.classList.remove('selected'));
+                headerMenuItems.forEach((el) => el.classList.remove('selected'));
                 element.classList.add('selected');
             });
         });
-        highlightCurrentPage();
+        highlightHeaderMenu();
 
         const offScreenMenuItems = document.querySelectorAll(".off_screen_menu ul li a");
         function getCurrentPage() {
             const path = window.location.pathname;
-            const page = path.split("/").pop();
-            return page;
+            return path;
         }
         function highlightOffScreenMenu() {
-        const currentPage = getCurrentPage();
-        offScreenMenuItems.forEach((element) => {
+            const currentPage = getCurrentPage();
+            offScreenMenuItems.forEach((element) => {
                 if (element.getAttribute("href") === currentPage) {
                     element.classList.add('selected');
                 } else {

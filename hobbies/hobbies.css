@@ -23,7 +23,6 @@
 .header{
     padding: 30px 0px;
     background-color: var(--black);
-
 }
 .header_wrapper{
     display: flex;
@@ -56,38 +55,61 @@ li a{
     justify-content: flex-end;
 }
 
-.education{
-    padding: 30px 0px;
-    background-color: #003566;
-    height: 100%;
-    min-height: 100vh;
-    height: 100%;
+.hobbies{
     background-color: var(--lightBlue);
+    padding: 30px 0px;
 }
-.education_achievements{
+.hobbies_wrapper{
     display: flex;
-    gap: 30px;
+    justify-content: space-between;
 }
-.achievement{
+.hobby{
+    position: relative;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    border: solid var(--yellow) 1px;
+    align-items: center;
+    margin-bottom: 200px;
+}
+.hobby_text_container{
+    position: absolute;
+    top: 220px;
+    max-width: 330px;
+}
+.hobby img{
+    width: 350px;
+    height: 280px;
+}
+.date{
+    background-color: var(--yellow);
+    width: fit-content;
+    padding: 10px;
+}
+.date p{
+    color: var(--darkBlue);
+}
+.hobby_text{
+    display: flex;
+    flex-direction: column;
     gap: 10px;
     background-color: var(--darkBlue);
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
-.achievement_text{
-    display: flex;
-    flex-direction: column;
+.hobby_label{
+    border: solid gray 1px;
+    width: fit-content;
+    padding: 5px 10px;
 }
-.achievement_icon{
-    display: flex;
-    gap: 20px;
-    align-items: center;
+.read_more{
+    padding: 5px 0px;
+    border-bottom: var(--yellow) solid 2px;
+    width: fit-content;
+    color: var(--yellow);
 }
-.achievement_icon svg{
-    width: 60px;
-    height: 60px;
+.read_more:hover{
+    cursor: pointer;
+    border-bottom: solid var(--lightBlue) 2px;
+    color: var(--lightBlue);
 }
 
 .intro{
@@ -101,19 +123,18 @@ h1{
     font-size: 80px;
 }
 h2{
-   font-size: 70px;
-   color: var(--yellow); 
+   font-size: 70px; 
+   color: var(--yellow);
 }
 h3{
     font-size: 50px;
 }
 h4{
     font-size: 20px;
-    color: var(--white);
+    color: var(--yellow);
 }
 h5{
     font-size: 15px;
-    color: var(--yellow);
 }
 .text{
     font-size: 18px;
@@ -137,18 +158,14 @@ h5{
     }
 }
 
-@media screen and (max-width: 1070px) {
+@media screen and (max-width: 1090px){
     .intro{
         align-items: center;
     }
-    .education_achievements{
+    .hobbies_wrapper{
         flex-wrap: wrap;
-        align-items: center;
         justify-content: center;
-    }
-    .achievement{
-        max-width: 480px;
-        width: 100%;
+        gap: 30px;
     }
 }
 
