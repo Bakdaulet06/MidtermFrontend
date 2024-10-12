@@ -1,0 +1,248 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: var(--white);
+}
+
+:root{
+    --black: #000814;
+    --darkBlue: #001d3d;
+    --lightBlue: #003566;
+    --gold: #ffc300;
+    --yellow: #ffd60a;
+    --white: #ffffff;
+}
+
+.container{
+    max-width: 1110px;
+    width: 100%;
+    margin: 0 auto;
+}
+.header{
+    padding: 30px 0px;
+    background-color: var(--black);
+
+}
+.header_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_logo{
+    font-size: 24px;
+    color: var(--gold);
+}
+.header_list ul{
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+}
+.header_list ul li a:hover{
+    color: var(--gold);
+    transition: 0.3s ease-in;
+}
+.header_list ul li a.selected{
+    color: var(--gold);
+    border-bottom: var(--gold) solid 2px;
+}
+li a{
+    text-decoration: none;
+    font-size: 18px;
+}
+.header_list{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.education{
+    padding: 30px 0px;
+    background-color: #003566;
+    height: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background-color: var(--lightBlue);
+}
+.education_achievements{
+    display: flex;
+    gap: 30px;
+}
+.achievement{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: solid var(--yellow) 1px;
+    gap: 10px;
+    background-color: var(--darkBlue);
+}
+.achievement_text{
+    display: flex;
+    flex-direction: column;
+}
+.achievement_icon{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.achievement_icon svg{
+    width: 60px;
+    height: 60px;
+}
+
+.intro{
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h1{
+    font-size: 80px;
+}
+h2{
+   font-size: 70px;
+   color: var(--yellow); 
+}
+h3{
+    font-size: 50px;
+}
+h4{
+    font-size: 20px;
+    color: var(--white);
+}
+h5{
+    font-size: 15px;
+    color: var(--yellow);
+}
+.text{
+    font-size: 18px;
+}
+.h_line{
+    height: 3px;
+    width: 50px;
+    background-color: var(--white);
+}
+
+.burger_menu{
+    display: none;
+}
+.off_screen_menu{
+    display: none;
+}
+
+@media  screen and (max-width:1150px) {
+    .header_wrapper{
+        padding: 0px 20px;
+    }
+}
+
+@media screen and (max-width: 1070px) {
+    .intro{
+        align-items: center;
+    }
+    .education_achievements{
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .achievement{
+        max-width: 480px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 748px){
+    .header_wrapper{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 591px){
+    .header_wrapper{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    .header_list{
+        display: none;
+    }
+    .about_me div{
+        flex-direction: column;
+    }
+    .v_line{
+        margin: 0px;
+    }
+
+    .burger_menu{
+        display: block;
+        height: 50px;
+        width: 50px;
+        margin-left: auto;
+        position: relative;
+    }
+    .burger_menu span{
+        height: 5px;
+        width: 100%;
+        background-color: #6f86ff;
+        border-radius: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: .3s ease;
+    }
+    .burger_menu span:nth-child(1){
+        top: 25%;
+    }
+    .burger_menu span:nth-child(3){
+        top: 75%;
+    }
+    .burger_menu.active span:nth-child(1){
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        z-index: 1;
+    }
+    .burger_menu.active span:nth-child(2){
+        opacity: 0;
+    }
+    .burger_menu.active span:nth-child(3){
+        top: 50%;
+        transform: translate(-50%, 50%) rotate(-45deg);
+        z-index: 1;
+    }
+
+    .off_screen_menu{
+        background-color: rgb(34, 37, 49);
+        height: 100vh;
+        width: 100%;
+        max-width: 450px;
+        position:fixed;
+        top: 0;
+        right: -450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 3rem;
+        transition: .3s ease;
+    }
+    .off_screen_menu.active{
+        z-index: 1;
+        right: 0px;
+    }
+    .off_screen_menu ul{
+        list-style-type: none;
+    }
+    .off_screen_menu ul li a:hover {
+        color: var(--gold);
+        transition: 0.3s ease-in;
+    }
+    .off_screen_menu ul li a.selected {
+        color: var(--gold);
+        border-bottom: var(--gold) solid 2px;
+    }
+}

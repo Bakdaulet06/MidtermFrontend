@@ -1,0 +1,339 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: var(--white);
+}
+
+:root{
+    --black: #000814;
+    --darkBlue: #001d3d;
+    --lightBlue: #003566;
+    --gold: #ffc300;
+    --yellow: #ffd60a;
+    --white: #ffffff;
+}
+
+.container{
+    max-width: 1110px;
+    width: 100%;
+    margin: 0 auto;
+}
+.header{
+    padding: 30px 0px;
+    background-color: var(--black);
+}
+.header_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_logo{
+    font-size: 24px;
+    color: var(--gold);
+}
+.header_list ul{
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+}
+.header_list ul li a:hover{
+    color: var(--gold);
+    transition: 0.3s ease-in;
+}
+.header_list ul li a.selected{
+    color: var(--gold);
+    border-bottom: var(--gold) solid 2px;
+}
+li a{
+    text-decoration: none;
+    font-size: 18px;
+}
+.header_list{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.home{
+    background-color: var(--lightBlue);
+    padding: 60px 0px;
+}
+.introduction_content{
+    max-width: 1110px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.introduction_text{
+    padding-top: 30px;
+    max-width: 555px;
+    width: 100%;
+}
+.introduction_content img{
+    max-width: 555px;
+    width: 100%;
+    height: fit-content;
+}
+.introduction_text{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+h1{
+    font-size: 80px;
+    color: var(--darkBlue);
+}
+h2{
+   font-size: 70px; 
+   color: var(--yellow);
+}
+h3{
+    font-size: 50px;
+}
+h4{
+    font-size: 20px;
+}
+h5{
+    font-size: 15px;
+}
+.text{
+    font-size: 18px;
+}
+.buttons{
+    display: flex;
+    gap: 30px;
+}
+.button{
+    padding: 20px 0px;
+    max-width: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button:hover{
+    cursor: pointer;
+}
+.view_work{
+    background-color: var(--gold);
+    color: var(--lightBlue);
+}
+.contact_me{
+    border: solid var(--gold) 1px;
+    color: var(--gold);
+}
+
+.about_me{
+    background-color: var(--darkBlue);
+    padding: 100px 0px;
+}
+.about_me_content img{
+    max-width: 445px;
+    width: 100%;
+    border: solid white 10px;
+}
+.intro{
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.h_line{
+    height: 3px;
+    width: 50px;
+    background-color: var(--white);
+}
+.about_me_content{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+.about_me_text{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.long_text{
+    max-width: 400px;
+    width: 100%;
+}
+.about_me_infos_wrapper{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+.about_me_name{
+    font-size: 50px;
+}
+.about_me_infos{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.about_me_info{
+    display: flex;
+    align-items: center;
+}
+.about_me_info p{
+    white-space: nowrap;
+}
+.v_line{
+    max-width: 1px;
+    height: 25px;
+    background-color: gray;
+    margin-right: 20px;
+}
+.about_me_info div{
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.explore_now{
+    background-color: var(--yellow);
+    color: var(--darkBlue);
+}
+
+.burger_menu{
+    display: none;
+}
+.off_screen_menu{
+    display: none;
+}
+
+@media screen and (max-width: 1150px){
+    .header_wrapper{
+        padding: 0px 20px;
+    }
+}
+
+@media screen and (max-width: 1090px){
+    .introduction_content{
+        flex-direction: column;
+        align-items: center;
+        max-width: 1110px;
+        width: 100%;
+        gap: 30px;
+    }
+    .introduction_text{
+        align-items: center;
+        text-align: center;
+    }
+    .button{
+        text-align: center;
+        padding: 0px 30px;
+    }
+
+    .about_me_content{
+        flex-direction: column-reverse;
+    }
+    .intro, .about_me_text{
+        align-items: center;
+        text-align: center;
+    }
+    .long_text{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 748px){
+    .header_wrapper{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 591px){
+    .header_wrapper{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    .header_list{
+        display: none;
+    }
+    .about_me div{
+        flex-direction: column;
+    }
+    .v_line{
+        margin: 0px;
+    }
+
+    .burger_menu{
+        display: block;
+        height: 50px;
+        width: 50px;
+        margin-left: auto;
+        position: relative;
+    }
+    .burger_menu span{
+        height: 5px;
+        width: 100%;
+        background-color: #6f86ff;
+        border-radius: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: .3s ease;
+    }
+    .burger_menu span:nth-child(1){
+        top: 25%;
+    }
+    .burger_menu span:nth-child(3){
+        top: 75%;
+    }
+    .burger_menu.active span:nth-child(1){
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        z-index: 1;
+    }
+    .burger_menu.active span:nth-child(2){
+        opacity: 0;
+    }
+    .burger_menu.active span:nth-child(3){
+        top: 50%;
+        transform: translate(-50%, 50%) rotate(-45deg);
+        z-index: 1;
+    }
+
+    .off_screen_menu{
+        background-color: rgb(34, 37, 49);
+        height: 100vh;
+        width: 100%;
+        max-width: 450px;
+        position:fixed;
+        top: 0;
+        right: -450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 3rem;
+        transition: .3s ease;
+    }
+    .off_screen_menu.active{
+        z-index: 1;
+        right: 0px;
+    }
+    .off_screen_menu ul{
+        list-style-type: none;
+    }
+    .off_screen_menu ul li a:hover {
+        color: var(--gold);
+        transition: 0.3s ease-in;
+    }
+    .off_screen_menu ul li a.selected {
+        color: var(--gold);
+        border-bottom: var(--gold) solid 2px;
+    }
+}
+
+
+
+
+

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="family.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="off_screen_menu">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="family.html">Family</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header_wrapper">
+                <div class="header_logo">
+                    Personal
+                </div>
+                <nav class="header_list">
+                    <ul>
+                        <li><a href="home.html" id="home_link">Home</a></li>
+                        <li><a href="family.html" id="family_link">Family</a></li>
+                        <li><a href="education.html" id="education_link">Education</a></li>
+                        <li><a href="hobbies.html" id="hobbies_link">Hobbies</a></li>
+                        <li><a href="contact.html" id="contact_link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="burger_menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="family">
+        <div class="container">
+            <div class="family_content">
+                <div class="intro">
+                    <h2>My Family</h2>
+                    <div class="h_line"></div>
+                    <p class="text">There are 6 people in my family</p>
+                </div>
+                <div class="family_members">
+                    <div class="member">
+                        <div class="member_image">
+    
+                        </div>
+                        <div class="member_text">
+                            <h4>My dad</h4>
+                            <p class="text">My dad's name is Bikozha. He is a teacher of history. He was born in 1966.</p>
+                            <div class="member_name">
+                                <p class="text">Bikozha Baiazitov</p>
+                                <h5>58 years old</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="member_image">
+    
+                        </div>
+                        <div class="member_text">
+                            <h4>My mom</h4>
+                            <p class="text">My mom's name is Adina. She is a teacher in college. She was born in 1971.</p>
+                            <div class="member_name">
+                                <p class="text">Adina Malikovna</p>
+                                <h5>53 years old</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="member_image">
+                            
+                        </div>
+                        <div class="member_text">
+                            <h4>My brother</h4>
+                            <p>My brother's name is Bakkozha. He is a teacher in math. He was born in 1994</p>
+                            <div class="member_name">
+                                <p class="text">Bakkozha Baikozha</p>
+                                <h5>30 years old</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="member_image">
+                            
+                        </div>
+                        <div class="member_text">
+                            <h4>My sister</h4>
+                            <p>My first sister's name is Aiganym. She is an english teacher. She was born in 1999</p>
+                            <div class="member_name">
+                                <p class="text">Aiganym Baikozha</p>
+                                <h5>25 years old</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="member_image">
+                            
+                        </div>
+                        <div class="member_text">
+                            <h4>My sister</h4>
+                            <p>My second sister's name is Nurila. She is an english teacher. She was born in 2003</p>
+                            <div class="member_name">
+                                <p class="text">Nurila Baikozha</p>
+                                <h5>21 years old</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div class="member_image">
+                            
+                        </div>
+                        <div class="member_text">
+                            <h4>Me</h4>
+                            <p>My name is Bakdaulet. I am a computer science student in SDU. I was born in 2006</p>
+                            <div class="member_name">
+                                <p class="text">Bakdaulet Baikozha</p>
+                                <h5>18 years old</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const hamMenu = document.querySelector(".burger_menu");
+        const offScreenMenu = document.querySelector(".off_screen_menu");
+        hamMenu.addEventListener('click', ()=>{
+            hamMenu.classList.toggle('active');
+            offScreenMenu.classList.toggle('active');
+        })
+
+        const selectedItems = document.querySelectorAll(".header_list ul li a");
+        function getCurrentPage() {
+            const path = window.location.pathname;
+            const page = path.split("/").pop();
+            return page;
+        }
+        function highlightCurrentPage() {
+        const currentPage = getCurrentPage();
+        selectedItems.forEach((element) => {
+            if (element.getAttribute("href") === currentPage) {
+                element.classList.add('selected');
+                } else {
+                element.classList.remove('selected');
+                }
+            });
+        }
+        selectedItems.forEach((element) => {
+            element.addEventListener('click', () => {
+                selectedItems.forEach((el) => el.classList.remove('selected'));
+                element.classList.add('selected');
+            });
+        });
+        highlightCurrentPage();
+
+        const offScreenMenuItems = document.querySelectorAll(".off_screen_menu ul li a");
+        function getCurrentPage() {
+            const path = window.location.pathname;
+            const page = path.split("/").pop();
+            return page;
+        }
+        function highlightOffScreenMenu() {
+        const currentPage = getCurrentPage();
+        offScreenMenuItems.forEach((element) => {
+                if (element.getAttribute("href") === currentPage) {
+                    element.classList.add('selected');
+                } else {
+                    element.classList.remove('selected');
+                }
+            });
+        }
+        offScreenMenuItems.forEach((element) => {
+            element.addEventListener('click', () => {
+                offScreenMenuItems.forEach((el) => el.classList.remove('selected'));
+                element.classList.add('selected');
+            });
+        });
+        highlightOffScreenMenu();
+
+    </script>
+</body>
+</html>
